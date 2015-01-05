@@ -1,0 +1,4 @@
+1. read documentation
+2. start it KISS
+3. test services
+4. todo...
