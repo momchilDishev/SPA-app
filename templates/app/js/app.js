@@ -27,6 +27,10 @@ app.config(function ($routeProvider) {
         controller: 'UserPublishNewAdController'
     });
 
+    $routeProvider.when('/user/ads/user/ads', {
+        templateUrl: 'templates/user/my-ads.html',
+        controller: 'UserMyAdsController'
+    });
 
     $routeProvider.otherwise(
         { redirectTo: '/' }

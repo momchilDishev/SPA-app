@@ -1,7 +1,8 @@
 'use strict';
 
 app.controller('UserPublishNewAdController',
-    function ($scope, $location, townsService, categoriesService, userService, notifyService) {
+    function ($scope, $location, townsService, categoriesService, userService, notifyService, $rootScope) {
+        $rootScope.pageTitle = "Publish New Ad";
         $scope.adData = {townId: null, categoryId: null};
         $scope.categories = categoriesService.getCategories();
         $scope.towns = townsService.getTowns();

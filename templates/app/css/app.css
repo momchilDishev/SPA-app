@@ -182,3 +182,10 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
 textarea{
     resize: none;
 }
+
+input.ng-valid{
+    background-color: green;
+}
+input.ng-invalid{
+    background-color: red;
+}
