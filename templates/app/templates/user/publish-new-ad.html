@@ -5,15 +5,15 @@
         <label for="title">Title:</label>
         <input type="text" id="title" ng-model="adData.title" required/>
     </p>
-    <!-- ngIf: ad.imageDataUrl -->
     <p>
-    <div>
-    <input type="file"></div>
-     <div ng-if="ad.imageDataUrl" class="ng-scope">
-        <label for="ad-image">Image:</label>
-        <img  id="ad-image" class="ad-image" ng-src="" src="">
+        <label for="image">Image:</label>
+        <input type="file" id="image"
+               onchange="angular.element(this).scope().fileSelected(this)" />
+    <div class="image-box">
+        <p>Image Preview</p>
     </div>
     </p>
+
     <p>
         <label for="text">Text:</label>
         <textarea id="text" ng-model="adData.text" cols="30"></textarea>
