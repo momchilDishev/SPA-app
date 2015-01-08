@@ -3,9 +3,6 @@
 app.controller('UserMyAdsController',
     function ($scope, $location, townsService, categoriesService, userService, notifyService, $rootScope, pageSize) {
         $rootScope.pageTitle = "My Ads";
-        $scope.adData = {townId: null, categoryId: null};
-        $scope.category = categoriesService.getCategories();
-        $scope.towns = townsService.getTowns();
 
         $scope.adsParams = {
             'startPage' : 1,

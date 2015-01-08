@@ -12,10 +12,10 @@
             <strong>Image:</strong>
             <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
         </div>
-        <div><strong>Category:</strong> {{ad.categoryId }}</div>
-        <div><strong>Town:</strong> {{ad.townId }}</div>
+        <div><strong>Category:</strong> {{ad.categoryName }}</div>
+        <div><strong>Town:</strong> {{ad.townName }}</div>
         <div><strong>Status :</strong> {{ad.status }}</div>
-        <a ng-click="deactivateAd()" class="button">Publish</a>
+        <a ng-click="deactivateAd()" class="button">Deactivate</a>
     </li>
 </ul>
 
