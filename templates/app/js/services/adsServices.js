@@ -45,15 +45,19 @@ app.factory('categoriesService',
     }
 );
 
-app.factory('statusService',
+app.factory('userAdsService',
     function ($resource, baseServiceUrl) {
-        var statusService = $resource(
-                baseServiceUrl + '/user/ads'
+        var userAdsResource = $resource(
+                baseServiceUrl + 'api/user/ads',
+            null,
+            {
+                'getAll': {method:'GET'}
+            }
         );
 
         return {
-            getStatus: function(success, error) {
-                return statusService.query(success, error);
+            getUserAds: function(params, success, error) {
+                return userAdsResource.getAll(params, success, error);
             }
         }
     }

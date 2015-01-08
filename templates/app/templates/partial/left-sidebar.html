@@ -36,9 +36,9 @@
             ng-click="statusClicked(null)">
             All
         </li>
-        <li class="special" ng-repeat="ad in ads"
+        <li class="special" ng-repeat="ad in ads.ads"
             ng-class="{'selected' : selectedStatusId == ad.status}"
-            ng-click="statusClicked(ad.status)">
+            ng-click="statusClicked(status)">
             {{ad.status}}
         </li>
     </ul>
