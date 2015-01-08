@@ -44,3 +44,17 @@ app.factory('categoriesService',
         }
     }
 );
+
+app.factory('statusService',
+    function ($resource, baseServiceUrl) {
+        var statusService = $resource(
+                baseServiceUrl + '/user/ads'
+        );
+
+        return {
+            getStatus: function(success, error) {
+                return statusService.query(success, error);
+            }
+        }
+    }
+);

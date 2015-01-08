@@ -27,8 +27,7 @@ app.factory('userService',
                 var request = {
                     method: 'PUT',
                     url: baseServiceUrl + '/api/user/ads/deactivate/'+id,
-                    headers: authService.getAuthHeaders(),
-                    params: params
+                    headers: authService.getAuthHeaders()
                 };
                 $http(request).success(success).error(error);
             },
@@ -36,9 +35,8 @@ app.factory('userService',
             publishAgainAd: function (id, success, error) {
                 var request = {
                     method: 'PUT',
-                    url: baseServiceUrl + '/api/user/ads/publishAgain/'+id,
-                    headers: authService.getAuthHeaders(),
-                    params: params
+                    url: baseServiceUrl + '/api/user/ads/publishagain/'+id,
+                    headers: authService.getAuthHeaders()
                 };
                 $http(request).success(success).error(error);
             }

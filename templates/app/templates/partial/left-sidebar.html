@@ -31,11 +31,16 @@
 <div ng-if="authService.isNormalUser()" class="box">
     <h2>My Ads</h2>
     <ul class="sidebar-menu">
-        <li><a href="#/user/ads">All</a></li>
-        <li><a href="#/user/ads">Published</a></li>
-        <li><a href="#/user/ads">Waiting Approval</a></li>
-        <li><a href="#/user/ads">Inactive</a></li>
-        <li><a href="#/user/ads">Rejected</a></li>
+        <li class="special"
+            ng-class="{'selected' : selectedStatusId == null}"
+            ng-click="statusClicked(null)">
+            All
+        </li>
+        <li class="special" ng-repeat="ad in ads"
+            ng-class="{'selected' : selectedStatusId == ad.status}"
+            ng-click="statusClicked(ad.status)">
+            {{ad.status}}
+        </li>
     </ul>
 </div>
 
