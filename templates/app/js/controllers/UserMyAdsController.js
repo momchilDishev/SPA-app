@@ -12,23 +12,23 @@ app.controller('UserMyAdsController',
             'pageSize' : pageSize
         };
 
-        $scope.reloadAds = function() {
+        $scope.reloadUserAds = function() {
             adsService.getUserAds(
                 $scope.adsParams,
                 function success(data) {
-                    $scope.ads = data;
+                    $scope.userAds = data;
                 },
                 function error(err) {
                     notifyService.showError("Cannot load user ads", err);
                 }
             );
         };
-        $scope.reloadAds();
+        $scope.reloadUserAds();
 
         $scope.$on("statusSelectionChanged", function(event, selectedStatus) {
             $scope.adsParams.status = selectedStatus;
             $scope.adsParams.startPage = 1;
-            $scope.reloadAds();
+            $scope.reloadUserAds();
         });
     }
 );

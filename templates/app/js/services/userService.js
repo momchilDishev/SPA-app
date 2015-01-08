@@ -13,7 +13,7 @@ app.factory('userService',
                 $http(request).success(success).error(error);
             },
 
-            getUserAds: function (params, success, error) {
+            getAds: function (params, success, error) {
                 var request = {
                     method: 'GET',
                     url: baseServiceUrl + '/api/user/ads',
