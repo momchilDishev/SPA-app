@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('UserMyAdsController',
-    function ($scope, $location, adsService, townsService, categoriesService, userService, notifyService, $rootScope, pageSize) {
+    function ($scope, $location, townsService, categoriesService, userService, notifyService, $rootScope, pageSize) {
         $rootScope.pageTitle = "My Ads";
         $scope.adData = {townId: null, categoryId: null};
         $scope.category = categoriesService.getCategories();
@@ -13,7 +13,7 @@ app.controller('UserMyAdsController',
         };
 
         $scope.reloadUserAds = function() {
-            adsService.getUserAds(
+            userService.getAds(
                 $scope.adsParams,
                 function success(data) {
                     $scope.userAds = data;

@@ -44,21 +44,3 @@ app.factory('categoriesService',
         }
     }
 );
-
-app.factory('userAdsService',
-    function ($resource, baseServiceUrl) {
-        var userAdsResource = $resource(
-                baseServiceUrl + 'api/user/ads',
-            null,
-            {
-                'getAll': {method:'GET'}
-            }
-        );
-
-        return {
-            getUserAds: function(params, success, error) {
-                return userAdsResource.getAll(params, success, error);
-            }
-        }
-    }
-);
