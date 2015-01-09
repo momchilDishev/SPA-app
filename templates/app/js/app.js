@@ -2,6 +2,7 @@
 
 var app = angular.module('app', ['ngRoute', 'ngResource', 'angular-loading-bar', 'ui.bootstrap.pagination']);
 
+
 app.constant('baseServiceUrl', 'http://softuni-ads.azurewebsites.net');
 app.constant('pageSize', 4);
 
@@ -32,11 +33,15 @@ app.config(function ($routeProvider) {
         controller: 'UserPublishNewAdController'
     });
 
-
+    $routeProvider.when('/edit-profile', {
+        templateUrl: 'templates/user/edit-profile.html',
+        controller: 'EditProfileController'
+    });
 
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );
+
 });
 
 app.run(function ($rootScope, $location, authService) {
@@ -47,4 +52,3 @@ app.run(function ($rootScope, $location, authService) {
         }
     });
 });
-

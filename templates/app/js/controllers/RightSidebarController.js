@@ -2,7 +2,7 @@
 
 // The RightSidebarController controls the content displayed in the right sidebar
 app.controller('RightSidebarController',
-    function ($scope, $rootScope, categoriesService, townsService) {
+    function ($scope, $rootScope, categoriesService, townsService, $route, $location) {
         $scope.categories = categoriesService.getCategories();
         $scope.towns = townsService.getTowns();
 
@@ -14,8 +14,20 @@ app.controller('RightSidebarController',
             $scope.selectedTownId = clickedTownId;
             $rootScope.$broadcast("townSelectionChanged", clickedTownId);
         };
-        $scope.show = true;
+
+        $scope.$on('$routeChangeSuccess', function () {
+            var path = $location.path();
+            $scope.rightSidebarVisible = true;
+            if(path === '/login'|| path === '/register' ||
+                path === '/user/ads/publish') {
+                $scope.rightSidebarVisible = false;
+            } else {
+                $scope.rightSidebarVisible = true;
+            }
+        });
 
     }
 
 );
+
+

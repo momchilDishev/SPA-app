@@ -1,6 +1,7 @@
 <!-- Login / register box for anonymous site visitors -->
 <div class="box" ng-if="authService.isAnonymous()">
     <a href="#/">Home</a>
+
     <p>To publish a new ad, please login.</p>
     <a href="#/login" class="button">Login</a>
     <a href="#/register" class="button">Register</a>
@@ -15,7 +16,6 @@
         <li><a href="#/user/ads">My Ads</a></li>
         <li><a href="#/user/ads/publish">Publish New Ad</a></li>
         <li><a href="#/user/profile">Edit Profile</a></li>
-        <li><a ng-click="logout()">Logout</a></li>
     </ul>
 </div>
 

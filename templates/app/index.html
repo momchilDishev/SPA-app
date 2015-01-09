@@ -28,7 +28,7 @@
     <div class='col-md-8' ng-view>
     </div>
 
-    <div class='col-md-2 sidebar' data-ng-controller="RightSidebarController">
+    <div class='col-md-2 sidebar' data-ng-controller="RightSidebarController" ng-show="rightSidebarVisible">
         <div ng-include="'templates/partial/right-sidebar.html'"></div>
     </div>
 </div>

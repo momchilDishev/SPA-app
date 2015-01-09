@@ -14,7 +14,6 @@ app.controller('UserAdsController',
                 $scope.adsParams,
                 function success(data) {
                     $scope.userAds = data;
-                    notifyService.showInfo("User adds successfully loaded.")
                 },
                 function error(err) {
                     notifyService.showError("Cannot load user ads", err);

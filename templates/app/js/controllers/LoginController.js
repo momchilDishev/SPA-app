@@ -14,6 +14,5 @@ app.controller('LoginController',
                 }
             );
         };
-
     }
 );
