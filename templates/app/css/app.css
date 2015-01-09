@@ -191,6 +191,14 @@ input.ng-valid{
 input.ng-invalid{
     background-color: red;
 }
+
+.ad-info-field{
+
+    display: block;
+    background-color: #C5E0B4;
+    color: #000000;
+}
+
 hr{
     display: block; height: 1px;
     border: 0; border-top: 1px solid #ccc;

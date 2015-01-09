@@ -1,15 +1,6 @@
-<!-- Navigation box for anonymous site visitors -->
-<div ng-if="authService.isAnonymous()" class="box">
-    <h2>Navigation</h2>
-    <ul class="sidebar-menu">
-        <li><a href="#/">Home</a></li>
-        <li><a href="#/login">Login</a></li>
-        <li><a href="#/register">Register</a></li>
-    </ul>
-</div>
-
 <!-- Login / register box for anonymous site visitors -->
 <div class="box" ng-if="authService.isAnonymous()">
+    <a href="#/">Home</a>
     <p>To publish a new ad, please login.</p>
     <a href="#/login" class="button">Login</a>
     <a href="#/register" class="button">Register</a>
@@ -38,11 +29,10 @@
             ng-click="statusClicked(null)">
             All
         </li>
-        <li class="special" ng-repeat="ad in ads.ads"
-            ng-class="{'selected' : selectedStatusId == ad.status}"
-            ng-click="statusClicked(status)">
-            {{ad.status}}
-        </li>
+        <li><a href="#/user/ads">Published</a></li>
+        <li><a href="#/user/ads">Waiting Approval</a></li>
+        <li><a href="#/user/ads">Inactive</a></li>
+        <li><a href="#/user/ads">Rejected</a></li>
     </ul>
 </div>
 

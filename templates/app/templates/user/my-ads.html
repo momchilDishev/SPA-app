@@ -1,5 +1,5 @@
-<pagination total-items="ads.numItems" ng-model="adsParams.startPage"
-            items-per-page="adsParams.pageSize" ng-change="reloadAds()"
+<pagination total-items="userAds.numItems" ng-model="adsParams.startPage"
+            items-per-page="adsParams.pageSize" ng-change="reloadUserAds()"
             max-size="9" boundary-links="true">
 </pagination>
 
@@ -7,15 +7,35 @@
 
     <li ng-repeat="ad in userAds.ads" class="box">
         <h1>{{ad.title}}</h1>
+
         <div>{{ad.date | date:'dd-MMM-yyyy'}}</div>
         <div ng-if='ad.imageDataUrl'>
             <strong>Image:</strong>
-            <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
+
+            <div class="ad-info-field">
+                <img class="ad-image" ng-src="{{ad.imageDataUrl}}" src=""/>
+            </div>
         </div>
-        <div><strong>Category:</strong> {{ad.categoryName }}</div>
-        <div><strong>Town:</strong> {{ad.townName }}</div>
-        <div><strong>Status :</strong> {{ad.status }}</div>
-        <a ng-click="deactivateAd()" class="button">Deactivate</a>
+        <div>
+            <strong>Category:</strong>
+
+            <div>
+                <span>{{ad.categoryName }}</span>
+            </div>
+        </div>
+        <div>
+            <strong>Town:</strong>
+
+            <div>
+                <span>{{ad.townName }}</span>
+            </div>
+        </div>
+        <div>
+            <strong>Status :</strong>
+
+            <div class="ad-info-field">{{ad.status }}</div>
+            <a ng-click="deactivateAd()" class="button">Deactivate</a>
+        </div>
     </li>
 </ul>
 
