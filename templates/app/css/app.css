@@ -1,6 +1,7 @@
 body {
     font-family: Calibri, Arial, serif;
     background-color: #E2F0D9;
+    font-size: 16px;
 }
 
 #app-header {
@@ -205,6 +206,7 @@ input.ng-invalid{
     display: block;
     background-color: #C5E0B4;
     color: #000000;
+    padding: 6px;
 
 }
 
