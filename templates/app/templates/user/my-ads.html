@@ -6,9 +6,10 @@
 <ul class="ads">
 
     <li ng-repeat="ad in userAds.ads" class="box">
-        <h1>{{ad.title}}</h1>
-
-        <div>{{ad.date | date:'dd-MMM-yyyy'}}</div>
+        <div class="ad-header">
+            <div><h1>{{ad.title}}</h1></div>
+            <div class="date">{{ad.date | date:'dd-MMM-yyyy'}}</div>
+        </div>
         <div ng-if='ad.imageDataUrl'>
             <strong>Image:</strong>
 

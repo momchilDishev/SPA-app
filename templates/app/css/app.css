@@ -180,6 +180,14 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
     max-height: 150px;
 }
 
+.ad-header div{
+    display: inline-block;
+}
+.date{
+    float:right
+}
+
+
 textarea{
     resize: none;
 }
@@ -193,10 +201,11 @@ input.ng-invalid{
 }
 
 .ad-info-field{
-
+    width:30%;
     display: block;
     background-color: #C5E0B4;
     color: #000000;
+
 }
 
 hr{
