@@ -188,7 +188,6 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
     float:right
 }
 
-
 textarea{
     resize: none;
 }
@@ -200,11 +199,20 @@ input.ng-valid{
 
 .ad-info-field{
     width:30%;
-    display: block;
+    display: inline-block;
     background-color: #C5E0B4;
     color: #000000;
     padding: 6px;
+    border: 1px solid grey;
+    margin: 5px;
 
+}
+
+.status{
+    display:block;
+}
+.label{
+    float:right;
 }
 
 hr{

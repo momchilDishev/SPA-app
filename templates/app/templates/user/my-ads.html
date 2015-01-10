@@ -16,21 +16,21 @@
             </div>
         </div>
         <div>
-            <strong>Category:</strong>
+            <div class="label"><strong>Category:</strong></div>
 
             <div class="ad-info-field">{{ad.categoryName }}</div>
 
         </div>
         <div>
-            <strong>Town:</strong>
+            <div class="label"><strong>Town:</strong></div>
 
             <div class="ad-info-field">{{ad.townName }}</div>
 
         </div>
         <div>
-            <strong>Status :</strong>
+            <div class="label"><strong>Status :</strong></div>
 
-            <div class="ad-info-field">{{ad.status }}</div>
+            <div class="ad-info-field status">{{ad.status }}</div>
             <a ng-click="deactivateAd()" class="button">Deactivate</a>
         </div>
     </li>
