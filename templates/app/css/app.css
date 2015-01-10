@@ -197,9 +197,6 @@ input.ng-valid{
     background-color: green;
     color: white;
 }
-input.ng-invalid{
-    background-color: red;
-}
 
 .ad-info-field{
     width:30%;
