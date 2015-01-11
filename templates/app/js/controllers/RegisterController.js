@@ -18,5 +18,6 @@ app.controller('RegisterController',
                 }
             );
         };
+        $scope.isRegisterform = true;
     }
 );

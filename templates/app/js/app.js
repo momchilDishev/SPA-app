@@ -33,7 +33,7 @@ app.config(function ($routeProvider) {
         controller: 'UserPublishNewAdController'
     });
 
-    $routeProvider.when('/edit-profile', {
+    $routeProvider.when('/user/profile', {
         templateUrl: 'templates/user/edit-profile.html',
         controller: 'EditProfileController'
     });

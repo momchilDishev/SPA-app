@@ -6,11 +6,11 @@ app.controller('RightSidebarController',
         $scope.categories = categoriesService.getCategories();
         $scope.towns = townsService.getTowns();
 
-        $scope.categoryClicked = function(clickedCategoryId) {
+        $scope.categoryClicked = function (clickedCategoryId) {
             $scope.selectedCategoryId = clickedCategoryId;
             $rootScope.$broadcast("categorySelectionChanged", clickedCategoryId);
         };
-        $scope.townClicked = function(clickedTownId) {
+        $scope.townClicked = function (clickedTownId) {
             $scope.selectedTownId = clickedTownId;
             $rootScope.$broadcast("townSelectionChanged", clickedTownId);
         };
@@ -18,8 +18,10 @@ app.controller('RightSidebarController',
         $scope.$on('$routeChangeSuccess', function () {
             var path = $location.path();
             $scope.rightSidebarVisible = true;
-            if(path === '/login'|| path === '/register' ||
-                path === '/user/ads/publish') {
+            if (path === '/login' ||
+                path === '/register' ||
+                path === '/user/ads/publish' ||
+                path === '/user/profile') {
                 $scope.rightSidebarVisible = false;
             } else {
                 $scope.rightSidebarVisible = true;
@@ -27,7 +29,6 @@ app.controller('RightSidebarController',
         });
 
     }
-
 );
 
 

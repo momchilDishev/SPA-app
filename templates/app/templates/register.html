@@ -1,39 +1,39 @@
 <div class="box">
-    <h2>Register</h2>
-    <p>
-        <label for="username">Username:</label>
-        <input type="text" id="username" ng-model="userData.username" required />
+    <div>
+        <h2>Register</h2>
+
+        <p>
+            <label for="username">Username:</label>
+            <input type="text" id="username" ng-model="userData.username" required/>
+        </p>
+
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" id="password" ng-model="userData.password" required/>
+        </p>
+
+        <p>
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" ng-model="userData.confirmPassword" required/>
+        </p>
+    </div>
+    <div ng-include="'templates/shared-user-info.html'"></div>
+        <input type="tel" id="phone" ng-model="userData.phone" required ng-show="isRegisterform"/>
+
     </p>
-    <p>
-        <label for="password">Password:</label>
-        <input type="password" id="password" ng-model="userData.password" required />
-    </p>
-    <p>
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" ng-model="userData.confirmPassword" required />
-    </p>
-    <p>
-        <label for="name">Name:</label>
-        <input type="text" id="name" ng-model="userData.name" required />
-    </p>
-    <p>
-        <label for="email">Email:</label>
-        <input type="email" id="email" ng-model="userData.email" required />
-    </p>
-    <p>
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" ng-model="userData.phone" required name="telephone number" />
-    </p>
+
     <p>
         <label for="town">Town:</label>
         <select id="town" ng-model="userData.townId">
             <option value="null">(None)</option>
             <option ng-repeat="town in towns"
-                    value="{{town.id}}">{{town.name}}</option>
+                    value="{{town.id}}">{{town.name}}
+            </option>
         </select>
     </p>
     <p>
         <a ng-click="register(userData)" class="button">Register</a>
         <a href="#/login" class="link">Login here</a>
+
     <p>
 </div>
