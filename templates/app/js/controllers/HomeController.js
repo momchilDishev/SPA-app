@@ -38,7 +38,7 @@ app.controller('HomeController',
         });
 
         $scope.$on("statusSelectionChanged", function(event, selectedStatusId) {
-            $scope.adsParams.status = {status:selectedStatusId};
+            $scope.adsParams.status = selectedStatusId;
             $scope.adsParams.startPage = 1;
             $scope.reloadUserAds();
         });

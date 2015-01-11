@@ -12,8 +12,6 @@ app.controller('StatusFilterController',
             $rootScope.$broadcast("statusSelectionChanged", clickedStatusId);
         };
 
-
-
         $scope.$on('$routeChangeSuccess', function () {
             var path = $location.path();
             $scope.statusNavVisible = false;

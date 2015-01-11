@@ -23,16 +23,6 @@ app.factory('userService',
                 $http(request).success(success).error(error);
             },
 
-            getAdsByStatus: function (params, success, error) {
-                var request = {
-                    method: 'GET',
-                    url: baseServiceUrl + '/api/user/ads?status='+params.status,
-                    headers: authService.getAuthHeaders(),
-                    params: params
-                };
-                $http(request).success(success).error(error);
-            },
-
             deactivateAd: function (id, success, error) {
                 var request = {
                     method: 'PUT',
