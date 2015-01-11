@@ -1,12 +1,13 @@
 'use strict';
 
 app.controller('HomeController',
-    function ($scope, adsService, notifyService, pageSize, $rootScope) {
+    function ($scope, adsService, notifyService, pageSize, $rootScope, selectedStatusId) {
         $rootScope.pageTitle = "Home";
 
         $scope.adsParams = {
             'startPage' : 1,
-            'pageSize' : pageSize
+            'pageSize' : pageSize,
+            'status': null
         };
 
         $scope.reloadAds = function() {
