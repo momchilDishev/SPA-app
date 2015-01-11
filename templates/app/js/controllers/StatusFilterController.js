@@ -13,6 +13,7 @@ app.controller('StatusFilterController',
         };
 
 
+
         $scope.$on('$routeChangeSuccess', function () {
             var path = $location.path();
             $scope.statusNavVisible = false;

@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('HomeController',
-    function ($scope, adsService, notifyService, pageSize, $rootScope, selectedStatusId) {
+    function ($scope, adsService, notifyService, pageSize, $rootScope, userService) {
         $rootScope.pageTitle = "Home";
 
         $scope.adsParams = {
@@ -38,9 +38,9 @@ app.controller('HomeController',
         });
 
         $scope.$on("statusSelectionChanged", function(event, selectedStatusId) {
-            $scope.adsParams.status = selectedStatusId;
+            $scope.adsParams.status = {status:selectedStatusId};
             $scope.adsParams.startPage = 1;
-            $scope.reloadAds();
+            $scope.reloadUserAds();
         });
 
     }
