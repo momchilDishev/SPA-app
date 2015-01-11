@@ -20,7 +20,7 @@
 </div>
 
 <!-- Navigation box MyAds selected -->
-<div ng-if="authService.isNormalUser()" class="box">
+<div ng-if="authService.isNormalUser()" class="box" ng-controller="StatusFilterController" ng-show="statusNavVisible">
     <h2>My Ads</h2>
     <hr/>
     <ul class="sidebar-menu">

@@ -1,6 +1,4 @@
-'use strict';
-
-app.controller('UserAdsController',
+app.controller('StatusFilterController',
     function ($scope, $location, userService, notifyService, $rootScope, pageSize) {
         $rootScope.pageTitle = "My Ads";
 
@@ -9,8 +7,13 @@ app.controller('UserAdsController',
             'pageSize' : pageSize
         };
 
+        $scope.statusClicked = function (clickedStatusId) {
+            $scope.selectedStatusId = clickedStatusId;
+            $rootScope.$broadcast("statusSelectionChanged", clickedStatusId);
+        };
+
         $scope.reloadUserAds = function() {
-            userService.getAds(
+            userService.getAdsByStatus(
                 $scope.adsParams,
                 function success(data) {
                     $scope.userAds = data;
@@ -22,7 +25,15 @@ app.controller('UserAdsController',
         };
         $scope.reloadUserAds();
 
+        $scope.$on('$routeChangeSuccess', function () {
+            var path = $location.path();
+            $scope.statusNavVisible = false;
+            if (path === '/user/ads' ){
+                $scope.statusNavVisible = true;
+            } else {
+                $scope.statusNavVisible = false;
+            }
+        });
 
     }
 );
-

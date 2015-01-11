@@ -23,10 +23,10 @@ app.factory('userService',
                 $http(request).success(success).error(error);
             },
 
-            getAdsByStatus: function (params, success, error, statusId) {
+            getAdsByStatus: function (params, success, error) {
                 var request = {
                     method: 'GET',
-                    url: baseServiceUrl + '/api/user/ads',
+                    url: baseServiceUrl + '/api/user/ads?status=' + params.status,
                     headers: authService.getAuthHeaders(),
                     params: params
                 };
