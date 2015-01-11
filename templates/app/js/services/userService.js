@@ -23,10 +23,10 @@ app.factory('userService',
                 $http(request).success(success).error(error);
             },
 
-            getWaitingApprovalAds: function (params, success, error) {
+            getAdsByStatus: function (params, success, error, statusId) {
                 var request = {
                     method: 'GET',
-                    url: baseServiceUrl + '/api/user/ads?status=waitingapproval',
+                    url: baseServiceUrl + '/api/user/ads',
                     headers: authService.getAuthHeaders(),
                     params: params
                 };

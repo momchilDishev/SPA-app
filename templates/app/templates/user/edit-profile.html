@@ -1,9 +1,8 @@
-<!-- TODO: html + service -->
-<div class="col-md-6 ">
+<div class="col-md-6 round-edges">
     <div class="box">
         <h2> Edit Profile</h2>
         <hr/>
-        <!-- open <p>-tag -->
+        <!-- open <p>-tag inside template-->
         <div ng-include="'templates/shared-user-info.html'"></div>
         <input type="tel" ng-model="userData.phoneNumber" required/>
         <!-- close <p>-tag -->
@@ -12,7 +11,8 @@
         <a href="#/" class="button">Cancel</a>
     </div>
 </div>
-<div class="col-md-6">
+
+<div class="col-md-6 round-edges">
     <div class="box">
         <h2> Change Password</h2>
         <hr/>

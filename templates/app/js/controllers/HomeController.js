@@ -36,6 +36,12 @@ app.controller('HomeController',
             $scope.reloadAds();
         });
 
+        $scope.$on("statusSelectionChanged", function(event, selectedStatusId) {
+            $scope.adsParams.status = selectedStatusId;
+            $scope.adsParams.startPage = 1;
+            $scope.reloadAds();
+        });
+
     }
 );
 

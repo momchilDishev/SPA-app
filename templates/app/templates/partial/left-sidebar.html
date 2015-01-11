@@ -27,12 +27,24 @@
         <li class="special"
             ng-class="{'selected' : selectedStatusId == null}"
             ng-click="statusClicked(null)">
-            <a href="#/user/ads">All</a>
+            All
         </li>
-        <li><a href="#/user/ads">Published</a></li>
-        <li><a href="#/user/ads">Waiting Approval</a></li>
-        <li><a href="#/user/ads">Inactive</a></li>
-        <li><a href="#/user/ads">Rejected</a></li>
+        <li ng-class="{'selected' : selectedStatusId == 'published'}"
+            ng-click="statusClicked('published')">
+            Published
+        </li>
+        <li ng-class="{'selected' : selectedStatusId == 'waitingapproval'}"
+            ng-click="statusClicked('waitingapproval')">
+            Waiting Approval
+        </li>
+        <li ng-class="{'selected' : selectedStatusId == 'inactive'}"
+            ng-click="statusClicked('inactive')">
+            Inactive
+        </li>
+        <li ng-class="{'selected' : selectedStatusId == 'rejected'}"
+            ng-click="statusClicked('rejected')">
+            Rejected
+        </li>
     </ul>
 </div>
 

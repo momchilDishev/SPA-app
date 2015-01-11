@@ -44,4 +44,3 @@ app.factory('categoriesService',
         }
     }
 );
-
