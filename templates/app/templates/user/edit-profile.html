@@ -1,10 +1,12 @@
 <!-- TODO: html + service -->
-<div class="col-md-6">
+<div class="col-md-6 ">
     <div class="box">
         <h2> Edit Profile</h2>
         <hr/>
+        <!-- open <p>-tag -->
         <div ng-include="'templates/shared-user-info.html'"></div>
         <input type="tel" ng-model="userData.phoneNumber" required/>
+        <!-- close <p>-tag -->
         </p>
         <a href="#/" ng-click="update(userData)" class="button">Update</a>
         <a href="#/" class="button">Cancel</a>
@@ -16,19 +18,19 @@
         <hr/>
         <p>
             <label for="old-password"> Old password:</label>
-            <input type="password" id="old-password" ng-model="userData.password" required/>
+            <input type="password" id="old-password" ng-model="userData.oldPassword" required/>
         </p>
 
         <p>
             <label for="new-password">New password:</label>
-            <input type="password" id="new-password" ng-model="userData.confirmPassword" required/>
+            <input type="password" id="new-password" ng-model="userData.newPassword" required/>
         </p>
 
         <p>
             <label for="confirm-new-password">Confirm new password:</label>
             <input type="password" id="confirm-new-password" ng-model="userData.confirmPassword" required/>
         </p>
-        <a href="#/" ng-click="changePassword()" class="button">Change Password</a>
+        <a href="#/" ng-click="changePassword(userData)" class="button">Change Password</a>
         <a href="#/" class="button">Cancel</a>
     </div>
 </div>

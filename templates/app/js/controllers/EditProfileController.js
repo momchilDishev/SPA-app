@@ -11,15 +11,26 @@ app.controller('EditProfileController',
         $scope.update = function (userData) {
             userService.updateProfile(userData,
                 function success() {
-                    notifyService.showInfo("User profile successfully updated");
+                    notifyService.showInfo("User profile successfully updated.");
                     $location.path("/");
                 },
                 function error(err) {
-                    notifyService.showError("User profile update failed", err);
+                    notifyService.showError("User profile update failed.", err);
                 }
             );
         };
-        $scope.isEditProfileForm = true;
+
+        $scope.changePassword = function (userData) {
+            userService.changePass(userData,
+                function success() {
+                    notifyService.showInfo("Password changed successfully.");
+                    $location.path("/");
+                },
+                function error(err) {
+                    notifyService.showError("Password change failed", err);
+                }
+            );
+        };
     }
 );
 

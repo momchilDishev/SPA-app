@@ -17,9 +17,10 @@
             <input type="password" id="confirm-password" ng-model="userData.confirmPassword" required/>
         </p>
     </div>
+    <!-- open <p>-tag -->
     <div ng-include="'templates/shared-user-info.html'"></div>
         <input type="tel" id="phone" ng-model="userData.phone" required ng-show="isRegisterform"/>
-
+    <!-- close <p>-tag -->
     </p>
 
     <p>
