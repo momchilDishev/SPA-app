@@ -5,12 +5,12 @@
             <div><h1>{{ad.title}}</h1></div>
             <div class="date">{{ad.date | date:'dd-MMM-yyyy'}}</div>
         </div>
-        <div ng-if='ad.imageDataUrl'>
+        <div class="image-box ad-info-field" >
             <img class="ad-image" ng-src="{{ad.imageDataUrl}}"/>
         </div>
         <div class="ad-info-field">{{ad.text }}</div>
 
-        <div>
+        <div class="ad-info">
             <div><strong>Name:</strong>
                 <div class="ad-info-field">{{ad.ownerName }}</div>
             </div>

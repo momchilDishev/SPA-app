@@ -118,13 +118,14 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
     font-weight: bold;
     text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px;
     background: #70AD47;
-    border: 2px solid #507E32;
+    border: 1px solid #507E32;
     border-radius: 5px;
     text-decoration: none;
     padding: 5px 20px;
     display: inline-block;
-    margin: 5px 10px 0px 10px;
+    margin: 5px 10px;
     outline: none;
+
 }
 
 .button:hover {
@@ -173,6 +174,7 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
     max-height: 100%;
     display: inline-block;
     vertical-align: middle;
+
 }
 
 .ad-image {
@@ -195,6 +197,10 @@ textarea {
 input.ng-valid {
     background-color: green;
     color: white;
+}
+.ad-info{
+    display: inline-block;
+    width: 40%;
 }
 
 .ad-info-field {
@@ -227,3 +233,13 @@ hr {
     border-radius: 20px;
     border: 1px solid green;
 }
+
+.content-80 {
+    width: 80%;
+}
+
+p {
+    margin: 5px 15px;
+}
+
+

@@ -6,6 +6,7 @@ app.controller('UserPublishNewAdController',
         $scope.adData = {townId: null, categoryId: null};
         $scope.categories = categoriesService.getCategories();
         $scope.towns = townsService.getTowns();
+        //$scope.adData.imageDataUrl = "../images/No_image_available.svg";
 
         $scope.publishAd = function (adData) {
             userService.createNewAd(adData,
@@ -31,6 +32,7 @@ app.controller('UserPublishNewAdController',
                 reader.readAsDataURL(file);
             } else {
                 $(".image-box").html("<p>File type not supported!</p>");
+
             }
         };
 

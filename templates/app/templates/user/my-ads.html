@@ -1,8 +1,3 @@
-<pagination total-items="userAds.numItems" ng-model="adsParams.startPage"
-            items-per-page="adsParams.pageSize" ng-change="reloadUserAds()"
-            max-size="9" boundary-links="true">
-</pagination>
-
 <ul class="ads">
 
     <li ng-repeat="ad in userAds.ads" class="box">
@@ -16,24 +11,26 @@
             </div>
         </div>
         <div>
-            <div ><strong>Category:</strong></div>
+            <div><strong>Category:</strong></div>
 
             <div class="ad-info-field">{{ad.categoryName }}</div>
 
         </div>
         <div>
-            <div ><strong>Town:</strong></div>
+            <div><strong>Town:</strong></div>
 
             <div class="ad-info-field">{{ad.townName }}</div>
 
         </div>
         <div>
-            <div ><strong>Status :</strong></div>
+            <div><strong>Status :</strong></div>
 
             <div class="ad-info-field status">{{ad.status }}</div>
             <a ng-click="deactivateAd(ad.id)" class="button">Deactivate</a>
         </div>
     </li>
+    <div ng-include src="'app/templates/pagination/pagination-partial.html'"></div>
+
 </ul>
 
 <div ng-if="ads.ads.length==0" class="box no-data">

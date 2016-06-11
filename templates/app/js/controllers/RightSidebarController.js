@@ -21,7 +21,8 @@ app.controller('RightSidebarController',
             if (path === '/login' ||
                 path === '/register' ||
                 path === '/user/ads/publish' ||
-                path === '/user/profile') {
+                path === '/user/profile' ||
+            path === '/user/ads'){
                 $scope.rightSidebarVisible = false;
             } else {
                 $scope.rightSidebarVisible = true;
