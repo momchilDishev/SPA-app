@@ -87,13 +87,13 @@ ul.sidebar-menu {
 ul.sidebar-menu li {
     list-style-type: none;
     cursor: pointer;
-    border: 1px solid rgba(0,0,0,0);
+    border: 1px solid rgba(0, 0, 0, 0);
     padding: 2px;
     color: #1c381c;
 }
 
 ul.sidebar-menu li:hover {
-    background: #9ec684; ;
+    background: #9ec684;;
 }
 
 ul.sidebar-menu li.special {
@@ -161,8 +161,7 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
     text-align: center;
 }
 
-.image-box:before
-{
+.image-box:before {
     content: '';
     height: 100%;
     display: inline-block;
@@ -181,24 +180,25 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
     max-height: 150px;
 }
 
-.ad-header div{
+.ad-header div {
     display: inline-block;
 }
-.date{
-    float:right
+
+.date {
+    float: right
 }
 
-textarea{
+textarea {
     resize: none;
 }
 
-input.ng-valid{
+input.ng-valid {
     background-color: green;
     color: white;
 }
 
-.ad-info-field{
-    width:30%;
+.ad-info-field {
+    width: 30%;
     display: inline-block;
     background-color: #C5E0B4;
     color: #000000;
@@ -208,21 +208,22 @@ input.ng-valid{
 
 }
 
-.status{
-    display:block;
-}
-.label{
-    float:right;
+.status {
+    display: block;
 }
 
-hr{
-    display: block; height: 1px;
-    border: 1px; border-top: 1px solid #ccc;
-    margin: 1em 0; padding: 0;
-    border-color: black;
+.label {
+    float: right;
 }
 
-.round-edges{
-    border-radius:20px;
-    border: 1px solid white;
+hr {
+    display: block;
+    border: 0.5px solid green;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.round-edges {
+    border-radius: 20px;
+    border: 1px solid green;
 }
