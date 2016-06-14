@@ -25,10 +25,7 @@
 
     </li>
 
-    <pagination class="modal-footer" total-items="ads.numItems" ng-model="adsParams.startPage"
-                items-per-page="adsParams.pageSize" ng-change="reloadAds()"
-                max-size="9" boundary-links="true">
-    </pagination>
+    <div ng-include src="'templates/pagination/pagination-partial.html'"></div>
 
 
 </ul>

@@ -38,6 +38,27 @@ app.config(function ($routeProvider) {
         controller: 'EditProfileController'
     });
 
+    $routeProvider.when('/admin/ads', {
+        templateUrl: 'templates/admin/all-ads.html',
+        controller: 'AdminAllAdsController'
+    });
+
+    $routeProvider.when('/admin/users', {
+        templateUrl: 'templates/admin/towns.html',
+        controller: 'AdminUsersController'
+    });
+
+    $routeProvider.when('/admin/categories', {
+        templateUrl: 'templates/admin/categories.html',
+        controller: 'AdminCategoriesController'
+    });
+    
+    $routeProvider.when('/admin/towns', {
+        templateUrl: 'templates/admin/towns.html',
+        controller: 'AdminTownsController'
+    });
+
+
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );
