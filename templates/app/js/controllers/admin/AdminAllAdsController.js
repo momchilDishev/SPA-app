@@ -1,6 +1,4 @@
-/**
- * Created by MOmoDi on 13.6.2016 г..
- */
+
 'use strict';
 
 app.controller('AdminAllAdsController',
@@ -26,3 +24,7 @@ app.controller('AdminAllAdsController',
         $scope.reloadAllAds();
     }
 );
+
+/**
+ * Created by MOmoDi on 13.6.2016 г..
+ */

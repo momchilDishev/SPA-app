@@ -23,34 +23,12 @@
 <div ng-if="authService.isNormalUser()" class="box" ng-controller="StatusFilterController" ng-show="statusNavVisible">
     <h2>My Ads</h2>
     <hr/>
-    <ul class="sidebar-menu">
-        <li class="special"
-            ng-class="{'selected' : selectedStatusId == null}"
-            ng-click="statusClicked(null)">
-            All
-        </li>
-        <li ng-class="{'selected' : selectedStatusId == 'published'}"
-            ng-click="statusClicked('published')">
-            Published
-        </li>
-        <li ng-class="{'selected' : selectedStatusId == 'waitingapproval'}"
-            ng-click="statusClicked('waitingapproval')">
-            Waiting Approval
-        </li>
-        <li ng-class="{'selected' : selectedStatusId == 'inactive'}"
-            ng-click="statusClicked('inactive')">
-            Inactive
-        </li>
-        <li ng-class="{'selected' : selectedStatusId == 'rejected'}"
-            ng-click="statusClicked('rejected')">
-            Rejected
-        </li>
-    </ul>
+    <div ng-include src="'templates/partial/ad-Status-partial.html'"></div>
 </div>
 
 <!-- Navigation box for logged in admins -->
 <div ng-if="authService.isAdmin()" class="box">
-    <h2>Administrator</h2>
+    <h2>Navigation</h2>
     <ul class="sidebar-menu">
         <li><a href="#/admin/ads">Ads</a></li>
         <li><a href="#/admin/users">Users</a></li>
@@ -58,4 +36,11 @@
         <li><a href="#/admin/towns">Towns</a></li>
         <li><a ng-click="logout()">Logout</a></li>
     </ul>
+</div>
+
+<!-- Ads Status box (admin) selected -->
+<div ng-if="authService.isAdmin()" class="box" ng-controller="StatusFilterController" ng-show="statusNavVisible">
+    <h2>Ads</h2>
+    <hr/>
+    <div ng-include src="'templates/partial/ad-Status-partial.html'"></div>
 </div>

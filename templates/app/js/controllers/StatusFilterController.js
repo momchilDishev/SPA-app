@@ -1,10 +1,8 @@
 app.controller('StatusFilterController',
-    function ($scope, $location,  notifyService, $rootScope, pageSize) {
-        $rootScope.pageTitle = "My Ads";
-
+    function ($scope, $location, notifyService, $rootScope, pageSize) {
         $scope.adsParams = {
-            'startPage' : 1,
-            'pageSize' : pageSize
+            'startPage': 1,
+            'pageSize': pageSize
         };
 
         $scope.statusClicked = function (clickedStatusId) {
@@ -13,10 +11,18 @@ app.controller('StatusFilterController',
         };
 
         $scope.$on('$routeChangeSuccess', function () {
-            var path = $location.path();
             $scope.statusNavVisible = false;
-            if (path === '/user/ads' ){
+
+            var path = $location.path();
+
+            if (path === '/user/ads') {
+                $rootScope.pageTitle = "My Ads";
                 $scope.statusNavVisible = true;
+
+            } else if (path === '/admin/ads') {
+                $rootScope.pageTitle = "Ads";
+                $scope.statusNavVisible = true;
+
             } else {
                 $scope.statusNavVisible = false;
             }

@@ -1,0 +1,23 @@
+<ul class="sidebar-menu">
+    <li class="special"
+        ng-class="{'selected' : selectedStatusId == null}"
+        ng-click="statusClicked(null)">
+        All
+    </li>
+    <li ng-class="{'selected' : selectedStatusId == 'published'}"
+        ng-click="statusClicked('published')">
+        Published
+    </li>
+    <li ng-class="{'selected' : selectedStatusId == 'waitingapproval'}"
+        ng-click="statusClicked('waitingapproval')">
+        Waiting Approval
+    </li>
+    <li ng-class="{'selected' : selectedStatusId == 'inactive'}"
+        ng-click="statusClicked('inactive')">
+        Inactive
+    </li>
+    <li ng-class="{'selected' : selectedStatusId == 'rejected'}"
+        ng-click="statusClicked('rejected')">
+        Rejected
+    </li>
+</ul>
