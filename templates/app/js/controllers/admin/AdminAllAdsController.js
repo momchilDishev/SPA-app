@@ -4,7 +4,7 @@
 app.controller('AdminAllAdsController',
     function ($scope, $location, adminService, notifyService, $rootScope, pageSize) {
         $rootScope.pageTitle = "Ads Administration - Ads";
-
+        
         $scope.adsParams = {
             'startPage': 1,
             'pageSize': pageSize

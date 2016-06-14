@@ -22,7 +22,7 @@ app.controller('RightSidebarController',
                 path === '/register' ||
                 path === '/user/ads/publish' ||
                 path === '/user/profile' ||
-            path === '/user/ads'){
+                path === '/user/ads') {
                 $scope.rightSidebarVisible = false;
             } else {
                 $scope.rightSidebarVisible = true;

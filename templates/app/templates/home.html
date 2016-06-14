@@ -1,33 +1,10 @@
 <ul class="ads">
 
     <li ng-repeat="ad in ads.ads" class="box">
-        <div class="ad-header">
-            <div><h1>{{ad.title}}</h1></div>
-            <div class="date">{{ad.date | date:'dd-MMM-yyyy'}}</div>
-        </div>
-        <div class="image-box ad-info-field" >
-            <img class="ad-image" ng-src="{{ad.imageDataUrl}}"/>
-        </div>
-        <div class="ad-info-field">{{ad.text }}</div>
-
-        <div class="ad-info">
-            <div><strong>Name:</strong>
-                <div class="ad-info-field">{{ad.ownerName }}</div>
-            </div>
-            <div><strong>Email:</strong>
-                <div class="ad-info-field">{{ad.ownerEmail }}</div>
-            </div>
-            <div><strong>Phone:</strong>
-                <div class="ad-info-field">{{ad.ownerPhone }}</div>
-            </div>
-        </div>
-
-
+        <div ng-include src="'templates/partial/shared-ad-info-partial.html'"></div>
+        <div ng-include src="'templates/partial/ad-user-info-partial.html'" class="ad-info"></div>
     </li>
-
     <div ng-include src="'templates/pagination/pagination-partial.html'"></div>
-
-
 </ul>
 
 <div ng-if="ads.ads.length==0" class="box no-data">
