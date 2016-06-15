@@ -41,6 +41,15 @@ app.factory('userService',
                 $http(request).success(success).error(error);
             },
 
+            deleteAd: function (id, success, error) {
+                var request = {
+                    method: 'DELETE',
+                    url: baseServiceUrl + '/api/user/ads/' + id,
+                    headers: authService.getAuthHeaders()
+                };
+                $http(request).success(success).error(error);
+            },
+
             updateProfile: function (userData, success, error) {
                 var request = {
                     method: 'PUT',

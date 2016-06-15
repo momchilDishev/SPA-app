@@ -162,12 +162,12 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
     text-align: center;
 }
 
-.image-box:before {
+/*.image-box:before {
     content: '';
     height: 100%;
     display: inline-block;
     vertical-align: middle;
-}
+}*/
 
 .image-box img, .image-box p {
     max-width: 100%;

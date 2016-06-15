@@ -1,7 +1,7 @@
 <ul class="ads">
 
     <li ng-repeat="ad in userAds.ads" class="box">
-        <div ng-include src="'templates/shared-ad-info-partial.html'"></div>
+        <div ng-include src="'templates/partial/shared-ad-info-partial.html'"></div>
         <div>
             <div><strong>Category:</strong></div>
             <div class="ad-info-field">{{ad.categoryName }}</div>
@@ -14,10 +14,22 @@
         <div>
             <div><strong>Status :</strong></div>
             <div class="ad-info-field status">{{ad.status }}</div>
-            <a ng-click="deactivateAd(ad.id)" class="button">Deactivate</a>
+            <a class="button" ng-click="deactivateAd(ad.id)">Deactivate</a>
+
+            <a class="button" ng-click="publishAgainAd(ad.id)"
+               ng-if="ad.status == 'Inactive' ||
+               ad.status == 'WaitingApproval'" >Publish Again</a>
+
+            <a class="button" ng-click="deleteAd(ad.id)"
+               ng-if="ad.status=='Inactive'||
+               ad.status == 'Rejected'">Delete</a>
         </div>
     </li>
-    <div ng-include src="'templates/pagination/pagination-partial.html'"></div>
+
+    <pagination total-items="ads.numItems" ng-model="adsParams.startPage"
+                items-per-page="adsParams.pageSize" ng-change="reloadUserAds()"
+                max-size="9" boundary-links="true">
+    </pagination>
 
 </ul>
 

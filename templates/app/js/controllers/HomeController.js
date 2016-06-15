@@ -41,7 +41,6 @@ app.controller('HomeController',
             $scope.adsParams.status = selectedStatusId;
             $scope.adsParams.startPage = 1;
             $scope.reloadUserAds();
-            $scope.reloadAllAds();
         });
 
     }

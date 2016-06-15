@@ -4,7 +4,25 @@
         <div ng-include src="'templates/partial/shared-ad-info-partial.html'"></div>
         <div ng-include src="'templates/partial/ad-user-info-partial.html'" class="ad-info"></div>
     </li>
-    <div ng-include src="'templates/pagination/pagination-partial.html'"></div>
+    <ul class="pagination">
+        <li ng-if="boundaryLinks" ng-class="{disabled: noPrevious()}"><a href ng-click="selectPage(1)">{{getText('first')}}</a>
+        </li>
+        <li ng-if="directionLinks" ng-class="{disabled: noPrevious()}"><a href ng-click="selectPage(page - 1)">{{getText('previous')}}</a>
+        </li>
+        <li ng-repeat="page in pages track by $index" ng-class="{active: page.active}"><a href
+                                                                                          ng-click="selectPage(page.number)">{{page.text}}</a>
+        </li>
+        <li ng-if="directionLinks" ng-class="{disabled: noNext()}"><a href ng-click="selectPage(page + 1)">{{getText('next')}}</a>
+        </li>
+        <li ng-if="boundaryLinks" ng-class="{disabled: noNext()}"><a href ng-click="selectPage(totalPages)">{{getText('last')}}</a>
+        </li>
+    </ul>
+
+    <pagination total-items="ads.numItems" ng-model="adsParams.startPage"
+                items-per-page="adsParams.pageSize" ng-change="reloadAds()"
+                max-size="9" boundary-links="true">
+
+    </pagination>
 </ul>
 
 <div ng-if="ads.ads.length==0" class="box no-data">

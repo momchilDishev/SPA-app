@@ -18,10 +18,11 @@ app.factory('adsService',
     }
 );
 
+
 app.factory('townsService',
     function ($resource, baseServiceUrl) {
         var townsResource = $resource(
-                baseServiceUrl + '/api/towns'
+            baseServiceUrl + '/api/towns'
         );
         return {
             getTowns: function(success, error) {
@@ -34,7 +35,7 @@ app.factory('townsService',
 app.factory('categoriesService',
     function ($resource, baseServiceUrl) {
         var categoriesResource = $resource(
-                baseServiceUrl + '/api/categories'
+            baseServiceUrl + '/api/categories'
         );
 
         return {
@@ -44,5 +45,4 @@ app.factory('categoriesService',
         }
     }
 );
-
 
