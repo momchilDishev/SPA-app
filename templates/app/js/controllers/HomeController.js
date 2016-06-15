@@ -35,6 +35,7 @@ app.controller('HomeController',
             $scope.adsParams.startPage = 1;
             $scope.reloadAds();
         });
+        
     }
 );
 

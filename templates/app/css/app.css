@@ -100,7 +100,7 @@ ul.sidebar-menu li.special {
     font-style: italic;
 }
 
-ul.sidebar-menu li.selected {
+ul.sidebar-menu li.selected, ul.sidebar-menu li a.selected {
     background: #DAA600;
     border: 1px solid #7F6000;
 }

@@ -8,14 +8,19 @@
 </div>
 
 <!-- Navigation box for logged in normal users (not admins) -->
-<div ng-if="authService.isNormalUser()" class="box">
+<div ng-if="authService.isNormalUser()" class="box" ng-controller="NavbarController">
     <h2>Navigation</h2>
     <hr/>
     <ul class="sidebar-menu">
-        <li><a href="#/user/home">Home</a></li>
-        <li><a href="#/user/ads">My Ads</a></li>
-        <li><a href="#/user/ads/publish">Publish New Ad</a></li>
-        <li><a href="#/user/profile">Edit Profile</a></li>
+        <li><a href="#/user/home"
+               ng-class="'{selected: selectedNavId == 1}'"
+               ng-click="navClicked(1)">Home</a></li>
+        <li><a href="#/user/ads" ng-class="'{selected: selectedNavId == 2}'"
+               ng-click="navClicked(2)">My Ads</a></li>
+        <li><a href="#/user/ads/publish" ng-class="'{selected: selectedNavId == 3}'"
+               ng-click="navClicked(3)">Publish New Ad</a></li>
+        <li><a href="#/user/profile" ng-class="'{selected: selectedNavId == 4}'"
+               ng-click="navClicked(4)">Edit Profile</a></li>
     </ul>
 </div>
 
