@@ -14,6 +14,10 @@
         <div>
             <div><strong>Status :</strong></div>
             <div class="ad-info-field status">{{ad.status }}</div>
+
+            <a class="button" ng-click="editAd(ad.id)"
+               ng-if="ad.status=='Inactive'||
+               ad.status == 'Rejected'">Edit</a>
             <a class="button" ng-click="deactivateAd(ad.id)">Deactivate</a>
 
             <a class="button" ng-click="publishAgainAd(ad.id)"
