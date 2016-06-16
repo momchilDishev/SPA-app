@@ -13,7 +13,7 @@
     <hr/>
     <ul class="sidebar-menu">
         <li><a href="#/user/home"
-               ng-class="'{selected: selectedNavId == 1}'"
+               ng-class="'{selected: $location.path() == /user/home}'"
                ng-click="navClicked(1)">Home</a></li>
         <li><a href="#/user/ads" ng-class="'{selected: selectedNavId == 2}'"
                ng-click="navClicked(2)">My Ads</a></li>
@@ -28,7 +28,7 @@
 <div ng-if="authService.isNormalUser()" class="box" ng-controller="StatusFilterController" ng-show="statusNavVisible">
     <h2>My Ads</h2>
     <hr/>
-    <div ng-include src="'templates/partial/ad-Status-partial.html'"></div>
+    <div ng-include src="'templates/partial/sidebar-menu-ad-status-partial.html'"></div>
 </div>
 
 <!-- Navigation box for logged in admins -->
@@ -46,5 +46,5 @@
 <div ng-if="authService.isAdmin()" class="box" ng-controller="StatusFilterController" ng-show="statusNavVisible">
     <h2>Ads</h2>
     <hr/>
-    <div ng-include src="'templates/partial/ad-Status-partial.html'"></div>
+    <div ng-include src="'templates/partial/sidebar-menu-ad-status-partial.html'"></div>
 </div>
