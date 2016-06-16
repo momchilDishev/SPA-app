@@ -6,7 +6,7 @@ app.controller('UserPublishNewAdController',
         $scope.adData = {townId: null, categoryId: null};
         $scope.categories = categoriesService.getCategories();
         $scope.towns = townsService.getTowns();
-        //$scope.adData.imageDataUrl = "../images/No_image_available.svg";
+        $scope.adData.imageDataUrl = "../images/No_image_available.svg";
 
         $scope.publishAd = function (adData) {
             userService.createNewAd(adData,

@@ -135,6 +135,7 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
     color: white;
     text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px;
     cursor: pointer;
+    margin: 4px 9px;
 }
 
 .link {
