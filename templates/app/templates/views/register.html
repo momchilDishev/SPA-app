@@ -18,16 +18,12 @@
             <input type="password" id="confirm-password" ng-model="userData.confirmPassword" required/>
         </p>
     </div>
-    <!-- open <p>-tag inside template-->
     <div ng-include="'templates/partial/shared-user-info-partial.html'">
     </div>
     <p>
         <label for="phone">Phone:</label>
         <input type="tel" id="phone" ng-model="userData.phone" required/>
-
     </p>
-
-
     <p>
         <label for="town">Town:</label>
         <select id="town" ng-model="userData.townId">
