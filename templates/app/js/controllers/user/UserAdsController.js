@@ -3,6 +3,7 @@
 app.controller('UserAdsController',
     function ($scope, $location, userService, notifyService, $rootScope, pageSize) {
         $rootScope.pageTitle = "My Ads";
+        $scope.adData = {townId: null, categoryId: null};
 
         $scope.adsParams = {
             'startPage': 1,
@@ -32,7 +33,7 @@ app.controller('UserAdsController',
                     notifyService.showError("Ad failed to be published again.", err);
                 })
         };
-
+        
         $scope.deleteAd = function (id) {
             userService.deleteAd(id,
                 function success() {
