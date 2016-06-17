@@ -4,9 +4,21 @@ app.controller('EditProfileController',
     function ($scope, $location, townsService, userService, notifyService, $rootScope) {
         $rootScope.pageTitle = "Edit Profile";
 
-        $scope.userData = {townId: null};
+        
         $scope.towns = townsService.getTowns();
 
+
+        $scope.getProfile = function(){
+            userService.getProfile(
+                function success(data) {
+                    $scope.userData = data;
+                },
+                function error(err) {
+                    notifyService.showError("Cannot load user data", err);
+                }
+            );
+        };
+        $scope.getProfile();
 
         $scope.update = function (userData) {
             userService.updateProfile(userData,

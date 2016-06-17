@@ -60,6 +60,15 @@ app.factory('userService',
                 $http(request).success(success).error(error);
             },
 
+            getProfile: function (success, error) {
+                var request = {
+                    method: 'GET',
+                    url: baseServiceUrl + '/api/user/profile',
+                    headers: authService.getAuthHeaders()
+                };
+                $http(request).success(success).error(error);
+            },
+
             updateProfile: function (userData, success, error) {
                 var request = {
                     method: 'PUT',
