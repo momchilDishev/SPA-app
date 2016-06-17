@@ -9,52 +9,57 @@ app.constant('pageSize', 4);
 app.config(function ($routeProvider) {
 
     $routeProvider.when('/', {
-        templateUrl: 'templates/home.html',
+        templateUrl: 'templates/views/home.html',
         controller: 'HomeController'
     });
 
     $routeProvider.when('/login', {
-        templateUrl: 'templates/login.html',
+        templateUrl: 'templates/views/login.html',
         controller: 'LoginController'
     });
 
     $routeProvider.when('/register', {
-        templateUrl: 'templates/register.html',
+        templateUrl: 'templates/views/register.html',
         controller: 'RegisterController'
     });
 
     $routeProvider.when('/user/ads', {
-        templateUrl: 'templates/user/my-ads.html',
+        templateUrl: 'templates/views/user/my-ads.html',
         controller: 'UserAdsController'
     });
 
     $routeProvider.when('/user/ads/publish', {
-        templateUrl: 'templates/user/publish-new-ad.html',
+        templateUrl: 'templates/views/user/publish-new-ad.html',
         controller: 'UserPublishNewAdController'
     });
 
     $routeProvider.when('/user/profile', {
-        templateUrl: 'templates/user/edit-profile.html',
+        templateUrl: 'templates/views/user/edit-profile.html',
         controller: 'EditProfileController'
     });
 
+    $routeProvider.when('/user/ads/edit', {
+        templateUrl: 'templates/views/user/edit-ad.html',
+        controller: 'UserEditAdController'
+    });
+
     $routeProvider.when('/admin/ads', {
-        templateUrl: 'templates/admin/all-ads.html',
+        templateUrl: 'templates/views/admin/all-ads.html',
         controller: 'AdminAllAdsController'
     });
 
     $routeProvider.when('/admin/users', {
-        templateUrl: 'templates/admin/towns.html',
+        templateUrl: 'templates/views/admin/towns.html',
         controller: 'AdminUsersController'
     });
 
     $routeProvider.when('/admin/categories', {
-        templateUrl: 'templates/admin/categories.html',
+        templateUrl: 'templates/views/admin/categories.html',
         controller: 'AdminCategoriesController'
     });
     
     $routeProvider.when('/admin/towns', {
-        templateUrl: 'templates/admin/towns.html',
+        templateUrl: 'templates/views/admin/towns.html',
         controller: 'AdminTownsController'
     });
 
