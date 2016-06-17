@@ -3,9 +3,10 @@
         <h2> Edit Profile</h2>
         <hr/>
         <!-- open <p>-tag inside template-->
-        <div ng-include="'templates/shared-user-info.html'"></div>
-        <input type="tel" ng-model="userData.phoneNumber" required/>
-        <!-- close <p>-tag -->
+        <div ng-include="'templates/partial/shared-user-info-partial.html'"></div>
+        <p>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" ng-model="userData.phoneNumber" required/>
         </p>
         <a href="#/" ng-click="update(userData)" class="button">Update</a>
         <a href="#/" class="button">Cancel</a>

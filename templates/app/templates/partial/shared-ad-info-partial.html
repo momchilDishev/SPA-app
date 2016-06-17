@@ -1,0 +1,8 @@
+<div class="ad-header">
+    <div><h1>{{ad.title}}</h1></div>
+    <div class="date">{{ad.date | date:'dd-MMM-yyyy'}}</div>
+</div>
+<div class="image-box ad-info-field">
+    <img class="ad-image" ng-src="{{ad.imageDataUrl || '//:0' }} "/>
+</div>
+<div class="ad-info-field">{{ad.text }}</div>
