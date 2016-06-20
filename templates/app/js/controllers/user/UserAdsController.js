@@ -12,6 +12,30 @@ app.controller('UserAdsController',
 
         };
 
+        $scope.getAd = function (id) {
+            userService.getAd(id,
+                function success(data) {
+                    $scope.editAdData = data;
+                    $rootScope.$broadcast("EditAdData", data);
+                    notifyService.showInfo("Ad info was successfully gotten.");
+                    $location.path("/user/ads/edit");
+                },
+                function error(err) {
+                    notifyService.showError("Ad failed to be edited.", err);
+                })
+        };
+
+        $scope.editAd = function (id, adData) {
+            userService.editAd(id, adData,
+                function success() {
+                    notifyService.showInfo("Advertisement edited. Don't forget to submit it for publishing.");
+                    $location.path("/user/ads");
+                },
+                function error(err) {
+                    notifyService.showError("Ad failed to be edited.", err);
+                })
+        };
+
         $scope.deactivateAd = function (id) {
             userService.deactivateAd(id,
                 function success() {
@@ -33,7 +57,7 @@ app.controller('UserAdsController',
                     notifyService.showError("Ad failed to be published again.", err);
                 })
         };
-        
+
         $scope.deleteAd = function (id) {
             userService.deleteAd(id,
                 function success() {
@@ -46,7 +70,7 @@ app.controller('UserAdsController',
         };
 
 
-        $scope.reloadUserAds = function () {
+        $scope.reloadAds = function () {
             userService.getAds(
                 $scope.adsParams,
                 function success(data) {
@@ -57,12 +81,12 @@ app.controller('UserAdsController',
                 }
             );
         };
-        $scope.reloadUserAds();
+        $scope.reloadAds();
 
         $scope.$on("statusSelectionChanged", function (event, selectedStatusId) {
             $scope.adsParams.status = selectedStatusId;
             $scope.adsParams.startPage = 1;
-            $scope.reloadUserAds();
+            $scope.reloadAds();
         });
     }
 );
