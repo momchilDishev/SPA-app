@@ -15,8 +15,10 @@
             <div><strong>Status :</strong></div>
             <div class="ad-info-field status">{{ad.status }}</div>
 
-            <a class="button" href="#/user/ads/edit"
-               ng-if="ad.status=='Inactive'">Edit</a>
+            <a href="#/user/ad/edit/{{ad.id}}" ng-click="getAd(ad.id)"
+               class="button"
+               ng-if="ad.status=='Inactive'||
+               ad.status=='Inactive'">Edit</a>
 
             <a class="button" ng-click="deactivateAd(ad.id)">Deactivate</a>
 
@@ -24,17 +26,13 @@
                ng-if="ad.status == 'Inactive' ||
                ad.status == 'WaitingApproval'" >Publish Again</a>
 
-            <a class="button" ng-click="deleteAd(ad.id)"
+            <a href="#/user/ad/delete/{{ad.id}}" class="button" ng-click="deleteAd(ad.id)"
                ng-if="ad.status=='Inactive'||
                ad.status == 'Rejected'">Delete</a>
         </div>
     </li>
-
-    <pagination total-items="ads.numItems" ng-model="adsParams.startPage"
-                items-per-page="adsParams.pageSize" ng-change="reloadAds()"
-                max-size="9" boundary-links="true">
-    </pagination>
-
+    <div ng-include src="'templates/pagination/pagination.html'"></div>
+    <div ng-include src="'templates/pagination/pagination-partial.html'"></div>
 </ul>
 
 <div ng-if="ads.ads.length==0" class="box no-data">
