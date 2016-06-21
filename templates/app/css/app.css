@@ -80,6 +80,14 @@ ul.ads li {
     text-align: center;
 }
 
+.box input, .box select {
+    width: 100%;
+    height: 35px;
+}
+
+.box .button {
+}
+
 ul.sidebar-menu {
     padding: 0px 5px;
 }
@@ -198,7 +206,8 @@ input.ng-valid {
     background-color: green;
     color: white;
 }
-.ad-info{
+
+.ad-info {
     display: inline-block;
     width: 40%;
 }
@@ -220,6 +229,10 @@ input.ng-valid {
 
 .label {
     float: right;
+}
+
+label {
+    font-weight: normal;
 }
 
 hr {
