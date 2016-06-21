@@ -1,5 +1,5 @@
-<div class="col-md-6 round-edges">
-    <div class="box">
+<div class="col-md-6" id="">
+    <div class="box round-edges">
         <h2> Edit Profile</h2>
         <hr/>
         <p>
@@ -21,13 +21,14 @@
                 <option ng-repeat="t in towns" value="{{t.id}}">{{t.name}}</option>
             </select>
         </p>
-        <a href="#/" ng-click="update(userData)" class="button">Update</a>
-        <a href="#/" class="button">Cancel</a>
+        
+        <a href="#/" ng-click="update(userData)" class="btn btn-primary center-block button ">Update</a>
+        <a href="#/" class="button btn btn-primary center-block">Cancel</a>
     </div>
 </div>
 
-<div class="col-md-6 round-edges">
-    <div class="box">
+<div class="col-md-6">
+    <div class="box round-edges">
         <h2> Change Password</h2>
         <hr/>
         <p>
