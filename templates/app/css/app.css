@@ -85,7 +85,17 @@ ul.ads li {
     height: 35px;
 }
 
-.box .button {
+#login {
+    margin: 20% auto;
+}
+
+#login .button {
+    margin-left: auto;
+    width: 40%;
+}
+
+#login .link {
+    margin-left: 20%;
 }
 
 ul.sidebar-menu {
