@@ -81,7 +81,7 @@ ul.ads li {
 }
 
 .box input, .box select {
-    width: 100%;
+    width: 250px;
     height: 35px;
 }
 

@@ -1,5 +1,6 @@
 app.controller('StatusFilterController',
     function ($scope, $location, notifyService, $rootScope, pageSize) {
+        $scope.selectedStatusId = null;
         $scope.adsParams = {
             'startPage': 1,
             'pageSize': pageSize

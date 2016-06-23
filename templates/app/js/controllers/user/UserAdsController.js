@@ -4,21 +4,21 @@ app.controller('UserAdsController',
     function ($scope, $location, userService, notifyService, $rootScope, pageSize) {
         $rootScope.pageTitle = "My Ads";
         $scope.adData = {townId: null, categoryId: null};
+       
 
         $scope.adsParams = {
             'startPage': 1,
             'pageSize': pageSize,
-            'status': null
+            'status': 0
 
         };
 
         $scope.getAd = function (id) {
             userService.getAd(id,
                 function success(data) {
-                    $scope.editAdData = data;
                     $rootScope.$broadcast("EditAdData", data);
                     notifyService.showInfo("Ad info was successfully gotten.");
-                    $location.path("/user/ads/edit");
+                    $location.path("/user/ads/edit/" + id);
                 },
                 function error(err) {
                     notifyService.showError("Ad failed to be edited.", err);
@@ -85,6 +85,7 @@ app.controller('UserAdsController',
 
         $scope.$on("statusSelectionChanged", function (event, selectedStatusId) {
             $scope.adsParams.status = selectedStatusId;
+            $scope.selectedStatusId = selectedStatusId;
             $scope.adsParams.startPage = 1;
             $scope.reloadAds();
         });
