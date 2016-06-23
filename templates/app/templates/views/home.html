@@ -1,13 +1,15 @@
-<ul class="ads">
+<div class="col-md-8">
+    <ul class="ads">
+        <li ng-repeat="ad in ads.ads" class="box">
+            <div ng-include src="'templates/partial/shared-ad-info-partial.html'"></div>
+            <div ng-include src="'templates/partial/shared-ad-user-info-partial.html'" class="ad-info"></div>
+        </li>
+        <div ng-include src="'templates/pagination/pagination.html'"></div>
+        <div ng-include src="'templates/pagination/pagination-partial.html'"></div>
+    </ul>
 
-    <li ng-repeat="ad in ads.ads" class="box">
-        <div ng-include src="'templates/partial/shared-ad-info-partial.html'"></div>
-        <div ng-include src="'templates/partial/shared-ad-user-info-partial.html'" class="ad-info"></div>
-    </li>
-    <div ng-include src="'templates/pagination/pagination.html'"></div>
-    <div ng-include src="'templates/pagination/pagination-partial.html'"></div>
-</ul>
+    <div ng-if="ads.ads.length==0" class="box no-data">
+        No ads found.
+    </div>
 
-<div ng-if="ads.ads.length==0" class="box no-data">
-    No ads found.
 </div>
