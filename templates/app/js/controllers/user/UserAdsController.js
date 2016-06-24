@@ -3,13 +3,14 @@
 app.controller('UserAdsController',
     function ($scope, $location, userService, notifyService, $rootScope, pageSize) {
         $rootScope.pageTitle = "My Ads";
+        $rootScope.selectedNavId = 1;
         $scope.adData = {townId: null, categoryId: null};
-       
+
 
         $scope.adsParams = {
             'startPage': 1,
             'pageSize': pageSize,
-            'status': 0
+            'status': null
 
         };
 
@@ -85,7 +86,7 @@ app.controller('UserAdsController',
 
         $scope.$on("statusSelectionChanged", function (event, selectedStatusId) {
             $scope.adsParams.status = selectedStatusId;
-            $scope.selectedStatusId = selectedStatusId;
+            $scope.adsParams.selectedStatusId = selectedStatusId;
             $scope.adsParams.startPage = 1;
             $scope.reloadAds();
         });

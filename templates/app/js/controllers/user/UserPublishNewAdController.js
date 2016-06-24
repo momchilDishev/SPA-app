@@ -3,6 +3,7 @@
 app.controller('UserPublishNewAdController',
     function ($scope, $location, townsService, categoriesService, userService, notifyService, $rootScope) {
         $rootScope.pageTitle = "Publish New Ad";
+        $rootScope.selectedNavId = 2;
         $scope.adData = {townId: null, categoryId: null};
         $scope.categories = categoriesService.getCategories();
         $scope.towns = townsService.getTowns();

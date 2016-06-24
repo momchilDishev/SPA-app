@@ -3,6 +3,7 @@
 app.controller('EditProfileController',
     function ($scope, $location, adData, townsService, userService, notifyService, $rootScope) {
         $rootScope.pageTitle = "Edit Profile";
+        $rootScope.selectedNavId = 3;
         $scope.towns = townsService.getTowns();
 
 

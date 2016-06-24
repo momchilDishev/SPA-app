@@ -28,7 +28,7 @@
 <div ng-if="authService.isNormalUser()" class="box" ng-controller="StatusFilterController" ng-show="statusNavVisible">
     <h2>My Ads</h2>
     <hr/>
-    <div ng-include src="'templates/partial/sidebar-menu-ad-status-partial.html'"></div>
+    <div ng-include src="'templates/partial/navbar-ad-status-partial.html'"></div>
 </div>
 
 <!-- Navigation box for logged in admins -->
@@ -46,5 +46,5 @@
 <div ng-if="authService.isAdmin()" class="box" ng-controller="StatusFilterController" ng-show="statusNavVisible">
     <h2>Ads</h2>
     <hr/>
-    <div ng-include src="'templates/partial/sidebar-menu-ad-status-partial.html'"></div>
+    <div ng-include src="'templates/partial/navbar-ad-status-partial.html'"></div>
 </div>

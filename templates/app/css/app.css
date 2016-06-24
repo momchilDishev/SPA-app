@@ -81,7 +81,7 @@ ul.ads li {
 }
 
 .box input, .box select {
-    width: 250px;
+    width: 230px;
     height: 35px;
 }
 
@@ -89,13 +89,14 @@ ul.ads li {
     margin: 20% auto;
 }
 
-#login .button {
-    margin-left: auto;
-    width: 40%;
+#login .button, #register .button {
+    margin: 0 auto;
+    width: 100px;
 }
 
-#login .link {
+#login .link, #register .link{
     margin-left: 20%;
+
 }
 
 ul.sidebar-menu {
@@ -106,9 +107,8 @@ ul.sidebar-menu li {
     list-style-type: none;
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0);
-    padding: 2px;
+    padding: 2px 2px 2px 5px;
     color: #1c381c;
-    padding-left: 5px;
 }
 
 ul.sidebar-menu li:hover {
@@ -249,9 +249,8 @@ label {
 
 hr {
     display: block;
-    border: 0.5px solid green;
-    margin: 1em 0;
-    padding: 0;
+    border: 0.25px solid green;
+    margin: 1em 0.5em;
 }
 
 .round-edges {
@@ -265,6 +264,9 @@ hr {
 
 p {
     margin: 5px 15px;
+}
+.couple p{
+    display: inline-block;
 }
 
 

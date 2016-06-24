@@ -1,8 +1,9 @@
 'use strict';
 
 app.controller('HomeController',
-    function ($scope, adsService, notifyService, pageSize, $rootScope, userService) {
+    function ($scope, adsService, notifyService, pageSize, $rootScope) {
         $rootScope.pageTitle = "Home";
+        $rootScope.selectedNavId = null;
 
         $scope.adsParams = {
             'startPage': 1,
@@ -32,6 +33,11 @@ app.controller('HomeController',
 
         $scope.$on("townSelectionChanged", function (event, selectedTownId) {
             $scope.adsParams.townId = selectedTownId;
+            $scope.adsParams.startPage = 1;
+            $scope.reloadAds();
+        });
+        $scope.$on("statusSelectionChanged", function (event, selectedStatusId) {
+            $scope.adsParams.slectedStatusId = selectedStatusId;
             $scope.adsParams.startPage = 1;
             $scope.reloadAds();
         });

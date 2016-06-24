@@ -1,6 +1,6 @@
 app.controller('StatusFilterController',
     function ($scope, $location, notifyService, $rootScope, pageSize) {
-        $scope.selectedStatusId = '';
+        
         $scope.adsParams = {
             'startPage': 1,
             'pageSize': pageSize
@@ -10,6 +10,7 @@ app.controller('StatusFilterController',
             $scope.selectedStatusId = clickedStatusId;
             $rootScope.$broadcast("statusSelectionChanged", clickedStatusId);
         };
+        $scope.statusClicked();
 
         $scope.$on('$routeChangeSuccess', function () {
             $scope.statusNavVisible = false;
