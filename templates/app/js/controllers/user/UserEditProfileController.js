@@ -1,11 +1,10 @@
 'use strict';
 
-app.controller('EditProfileController',
-    function ($scope, $location, adData, townsService, userService, notifyService, $rootScope) {
+app.controller('UserEditProfileController',
+    function ($scope, $location, townsService, userService, notifyService, $rootScope) {
         $rootScope.pageTitle = "Edit Profile";
         $rootScope.selectedNavId = 3;
         $scope.towns = townsService.getTowns();
-
 
         $scope.getProfile = function(){
             userService.getProfile(
