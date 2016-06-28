@@ -48,17 +48,16 @@ app.controller('UserAdsController',
                 })
         };
 
-        $scope.deleteAd = function (id) {
-            userService.deleteAd(id,
-                function success() {
-                    notifyService.showInfo("Ad was successfully deleted.");
-                    $location.path("/user/ads");
+        $scope.deleteAdButtonClicked = function (id) {
+            userService.getAd(id,
+                function success(data) {
+                    $rootScope.$broadcast("DeleteAdData", data);
+                    notifyService.showInfo("Ad info was successfully gotten.");
                 },
                 function error(err) {
-                    notifyService.showError("Ad failed to be deleted.", err);
+                    notifyService.showError("Ad info was not gotten.", err);
                 })
         };
-
 
         $scope.reloadAds = function () {
             userService.getAds(

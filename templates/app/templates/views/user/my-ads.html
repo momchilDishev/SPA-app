@@ -27,7 +27,7 @@
                    ng-if="ad.status == 'Inactive' ||
                ad.status == 'WaitingApproval'">Publish Again</a>
 
-                <a href="#/user/ads/delete/{{ad.id}}" class="button" ng-click="deleteAd(ad.id)"
+                <a href="#/user/ads/delete/{{ad.id}}" class="button" ng-click="deleteAdButtonClicked(ad.id)"
                    ng-if="ad.status=='Inactive'||
                ad.status == 'Rejected'">Delete</a>
             </div>

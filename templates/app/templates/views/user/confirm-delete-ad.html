@@ -3,8 +3,17 @@
         <h2>Confirm Delete Ad?</h2>
         <hr/>
         <div ng-include src="'templates/partial/shared-ad-info-partial.html'"></div>
+        <div>
+            <div><strong>Category:</strong></div>
+            <div class="ad-info-field">{{ad.categoryName }}</div>
+
+        </div>
+        <div>
+            <div><strong>Town:</strong></div>
+            <div class="ad-info-field">{{ad.townName }}</div>
+        </div>
         <p>
-            <a ng-click="deleteAd(id, adData)" class="button">Delete</a>
+            <a ng-click="deleteAd(ad.id)" class="button">Delete</a>
             <a href="#/user/ads" class="button">Cancel</a>
         </p>
     </div>
