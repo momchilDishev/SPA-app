@@ -50,10 +50,10 @@ app.factory('userService',
                 $http(request).success(success).error(error);
             },
 
-            editAd: function (id, adData, success, error) {
+            editAd: function (adData, success, error) {
                 var request = {
                     method: 'PUT',
-                    url: baseServiceUrl + '/api/user/ads/' + id,
+                    url: baseServiceUrl + '/api/user/ads/' + adData.id,
                     headers: authService.getAuthHeaders(),
                     data: adData
                 };

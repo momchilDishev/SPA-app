@@ -19,29 +19,18 @@ app.controller('UserAdsController',
                 function success(data) {
                     $rootScope.$broadcast("EditAdData", data);
                     notifyService.showInfo("Ad info was successfully gotten.");
-                    $location.path("/user/ads/edit/" + id);
                 },
                 function error(err) {
                     notifyService.showError("Ad failed to be edited.", err);
                 })
         };
 
-        $scope.editAd = function (id, adData) {
-            userService.editAd(id, adData,
-                function success() {
-                    notifyService.showInfo("Advertisement edited. Don't forget to submit it for publishing.");
-                    $location.path("/user/ads");
-                },
-                function error(err) {
-                    notifyService.showError("Ad failed to be edited.", err);
-                })
-        };
 
         $scope.deactivateAd = function (id) {
             userService.deactivateAd(id,
                 function success() {
                     notifyService.showInfo("Ad was successfully deactivated.");
-                    $location.path("/");
+                    $location.path("/user/ads");
                 },
                 function error(err) {
                     notifyService.showError("Ad failed to be deactivated.", err);
@@ -52,7 +41,7 @@ app.controller('UserAdsController',
             userService.publishAgainAd(id,
                 function success() {
                     notifyService.showInfo("Ad was successfully published again.");
-                    $location.path("/");
+                    $location.path("/user/ads");
                 },
                 function error(err) {
                     notifyService.showError("Ad failed to be published again.", err);
@@ -63,7 +52,7 @@ app.controller('UserAdsController',
             userService.deleteAd(id,
                 function success() {
                     notifyService.showInfo("Ad was successfully deleted.");
-                    $location.path("/");
+                    $location.path("/user/ads");
                 },
                 function error(err) {
                     notifyService.showError("Ad failed to be deleted.", err);

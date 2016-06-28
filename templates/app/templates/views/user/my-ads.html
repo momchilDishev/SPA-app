@@ -16,7 +16,7 @@
                 <div><strong>Status :</strong></div>
                 <div class="ad-info-field status">{{ad.status }}</div>
 
-                <a href="#/user/ad/edit/{{ad.id}}" ng-click="getAd(ad.id)"
+                <a href="#/user/ads/{{ad.id}}" ng-click="getAd(ad.id)"
                    class="button"
                    ng-if="ad.status=='Inactive'||
                ad.status=='Inactive'">Edit</a>
@@ -27,7 +27,7 @@
                    ng-if="ad.status == 'Inactive' ||
                ad.status == 'WaitingApproval'">Publish Again</a>
 
-                <a href="#/user/ad/delete/{{ad.id}}" class="button" ng-click="deleteAd(ad.id)"
+                <a href="#/user/ads/delete/{{ad.id}}" class="button" ng-click="deleteAd(ad.id)"
                    ng-if="ad.status=='Inactive'||
                ad.status == 'Rejected'">Delete</a>
             </div>
