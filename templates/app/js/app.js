@@ -42,6 +42,10 @@ app.config(function ($routeProvider) {
         templateUrl: 'templates/views/user/edit-ad.html',
         controller: 'UserEditAdController'
     });
+    $routeProvider.when('/user/ads/delete:id', {
+        templateUrl: 'templates/views/user/confirm-delete.html',
+        controller: 'UserDeleteAdController'
+    });
 
     $routeProvider.when('/admin/ads', {
         templateUrl: 'templates/views/admin/all-ads.html',

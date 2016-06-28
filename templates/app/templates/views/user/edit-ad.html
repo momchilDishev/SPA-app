@@ -31,6 +31,8 @@
         </p>
         <p>
             <a ng-click="editAd(adData)" class="button">Edit</a>
+            <a href="#/user/ads/delete/{{adData.id}}" ng-click="deleteAdButtonClicked(adData.id)"
+               class="button">Delete</a>
             <a href="#/user/ads" class="button">Cancel</a>
         </p>
     </div>
